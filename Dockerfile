@@ -42,4 +42,4 @@ LABEL org.opencontainers.image.ref.name="${PACKAGE}" \
 
 COPY --from=build /go/bin/${APPLICATION} /hey
 # ENTRYPOINT ["/hey"]
-CMD ["/hey", "-n 1000", "-c 100", "-t 100", "-m GET", "http://auto-proxy.stage.ss.normalsigma.org/healthz"]
+CMD ["/hey", "-n", "1000", "-c", "100", "-t" "100", "-m" "GET", "http://auto-proxy.stage.ss.normalsigma.org/healthz"]
