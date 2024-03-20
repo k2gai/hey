@@ -104,6 +104,7 @@ Options:
 `
 
 func main() {
+	fmt.Println("Hello!!!")
 	flag.Usage = func() {
 		fmt.Fprint(os.Stderr, fmt.Sprintf(usage, runtime.NumCPU()))
 	}
