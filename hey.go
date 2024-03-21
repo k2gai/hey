@@ -107,8 +107,6 @@ func main() {
 	flag.Usage = func() {
 		fmt.Fprint(os.Stderr, fmt.Sprintf(usage, runtime.NumCPU()))
 	}
-
-	fmt.Println("Hello!!!")
 	
 	var hs headerSlice
 	flag.Var(&hs, "H", "")
@@ -117,6 +115,9 @@ func main() {
 	if flag.NArg() < 1 {
 		usageAndExit("")
 	}
+
+	fmt.Fprint(os.Stderr, fmt.Sprintln("Running command:"))
+	fmt.Fprint(os.Stderr, fmt.Sprintln("hey", flag.Args()))
 
 	runtime.GOMAXPROCS(*cpus)
 	num := *n
